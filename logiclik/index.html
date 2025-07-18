@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login by click button js</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #222;
+        color: #fff;
+      }
+
+      .container {
+        position: absolute;
+        left: 30%;
+        top: 20%;
+        transform: translate(-20%, -20%) scale(0);
+        width: 450px;
+        border-radius: 10px;
+        background-color: #111;
+        border: 1px solid #fff;
+        padding: 25px;
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
+
+      #inputfirst {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        margin-top: 5px;
+      }
+
+      span {
+        color: #fff;
+        cursor: pointer;
+        margin-left: 96%;
+        margin-bottom: 5px;
+        font: bold;
+        /* color: red; */
+        font-size: 27px;
+      }
+
+      .head {
+        background: linear-gradient(
+          to right,
+          red,
+          crimson,
+          yellow,
+          blue,
+          violet,
+          purple
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      #radio {
+        margin-left: 10px;
+        margin-bottom: 19px;
+      }
+
+      #messageme {
+        width: 100%;
+        height: 70px;
+        margin-bottom: 15px;
+      }
+
+      .loginhere {
+        width: 100%;
+        padding: 6px;
+      }
+
+      #contact {
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 100px auto;
+        cursor: pointer;
+      }
+      #contactt {
+        padding: 10px;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 100px auto;
+        cursor: pointer;
+      }
+
+      .container.show {
+        opacity: 1;
+        transform: translate(-20%, -20%) scale(1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore omnis a
+      esse officia quas animi in sequi harum numquam tenetur laudantium pariatur
+      fugiat dolor eum, consequuntur ea reiciendis debitis maxime.
+    </p>
+    <button id="contact">Click to Contact</button>
+     <button id="contactt">Change theme</button>
+    <div class="container">
+      <span id="span">x</span>
+      <div class="head">
+        <h1>Please Enter your Details !</h1>
+      </div>
+      <div class="contain">
+        <label for="FullName">FullName</label>
+        <input type="text" id="inputfirst" placeholder="Enter your name" required/>
+
+        <label for="Gender">Gender :</label>
+        <input type="radio" type="radio" id="radio" name="gender"  required/>Male
+        <input type="radio" type="radio" id="radio" name="gender" required/>Female
+        <input type="radio" type="radio" id="radio" name="gender" required/>other
+
+        <div class="textarea">
+          <textarea
+            name="message"
+            id="messageme"
+            placeholder="Enter your message here" required
+          ></textarea>
+        </div>
+
+        <button class="loginhere">Login</button>
+      </div>
+    </div>
+
+    <script>
+     
+      const contact = document.querySelector("#contact");
+      const contactt = document.querySelector("#contactt");
+      const container = document.querySelector(".container");
+      const span = document.querySelector("#span");
+      contact.addEventListener("click", function () {
+        container.classList.add("show");
+      });
+      span.addEventListener("click", function () {
+        container.classList.remove("show");
+      });
+
+       let body = true;
+      contactt.addEventListener("click", function(){
+        if(body){
+          document.body.style.backgroundColor = "white"
+            document.body.style.color = "black";
+            body = false;
+
+      }else{
+          document.body.style.backgroundColor = "black"
+             document.body.style.color = "white";
+             body = true;
+      }
+      })
+    </script>
+  </body>
+</html>
